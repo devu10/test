@@ -1,6 +1,4 @@
 tis is just the branch for new git repo
-<<<<<<< HEAD
 chapter 4 updated from the local repo 
-=======
 this is update from remote 
->>>>>>> b3c49e0ac0580d308d202711c2fdc625a322c7c5
+
