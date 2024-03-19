@@ -1,2 +1,25 @@
-console.log("script added");
-alert("script added");
+// console.log("script added");
+/*alert("script added");*/
+
+// variables
+
+// var, let and const
+
+var name = "devendra raj dahal";
+
+console.log(name);
+name = "devu";
+
+console.log(name);
+
+let lname = "dahal";
+
+console.log(name, lname);
+
+const age = 12;
+
+// age = 12;
+
+console.log(age);
+
+// naming convention is variable should start with with $ or _ or char and cna befolled by numbers.
