@@ -4,7 +4,7 @@
 // variables
 
 // var, let and const
-
+/*
 var name = "devendra raj dahal";
 
 console.log(name);
@@ -28,3 +28,12 @@ const a = 3;
 const b = 4;
 c = a ** b;
 console.log(c);
+*/
+
+// const answer = Math;
+// console.log(answer);
+
+// console.log(typeof "03465465");
+
+var a = undefined;
+console.log(typeof a, a);
