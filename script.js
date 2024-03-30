@@ -28,3 +28,8 @@ const a = 3;
 const b = 4;
 c = a ** b;
 console.log(c);
+
+//
+const dd = `this is the rest and test jsu ttest jjj`;
+console.log(dd.lastIndexOf("rest"));
+
