@@ -5,3 +5,13 @@ body {
 * {
   box-sizing: border-box;
 }
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  flex-direction: column;
+}
