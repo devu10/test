@@ -12,6 +12,6 @@ body {
   align-items: center;
 }
 
-section {
+section div {
   flex-direction: column;
 }
