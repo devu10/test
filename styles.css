@@ -15,3 +15,7 @@ body {
 section div {
   flex-direction: column;
 }
+
+section ul {
+  flex-direction: column;
+}
