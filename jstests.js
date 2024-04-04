@@ -41,20 +41,31 @@ const randomNum = new Array(50)
 console.log("Random Array: \n" + randomNum);
 
 //2. sort the array in descending order
-console.log(
-  "Sorted Array in Descending order: \n" + randomNum.sort((a, b) => b - a)
-);
+console.log("Sorted Array: \n" + randomNum.sort((a, b) => b - a));
 
 //3. get total of the array
 console.log(
-  "The Total value of the array is: " +
+  "Total: " +
     randomNum.reduce((previousValue, CurrentValue) => {
       return previousValue + CurrentValue;
     }, 0)
 );
 
 //4.Divide original array in to 2 new arrays that contains even or odd numbers only each.
+const evenNum = randomNum.filter((num) => num % 2 === 0);
+const oddNum = randomNum.filter((num) => num % 2 !== 0);
+console.log("even Array: \n" + evenNum + "\n\n" + "odd Array: \n" + oddNum);
 
 // 5. remove duplicate number for the original array
-
+// console.log(randomNum.indexOf(num), num, index);
+const uniqueNo = randomNum.filter(
+  (num, index) => randomNum.indexOf(num) === index
+);
+console.log("Array with no Duplicate value is: \n" + uniqueNo);
 // Challange #2 create unique array 50 numbers rang between 1 and 100 programmatically
+const uarr = [];
+while (uarr.length < 50) {
+  let rNo = Math.round(Math.random() * 100) + 1;
+  !uarr.includes(rNo) && uarr.push(rNo);
+}
+console.log(uarr);
