@@ -100,14 +100,13 @@ function dateCh(food, expiry) {
   const currentDate = new Date();
   const expirydate = new Date(expiry);
 
-  return expirydate < currentDate
-    ? console.log(
-        food +
-          " expired " +
-          Math.floor((currentDate - expirydate) / (1000 * 60 * 60 * 24)) +
-          " days ago."
-      )
-    : console.log("You have 10 days to use it");
+  const DateDiff = Math.floor(
+    (currentDate - expirydate) / (1000 * 60 * 60 * 24)
+  );
+
+  return DateDiff > 0
+    ? console.log(food + " expired " + Math.abs(DateDiff) + " days ago.")
+    : console.log(`You have ${Math.abs(DateDiff)} days to use ${food}`);
 }
 
-dateCh("apple", "2025-4-7");
+dateCh("apple", "2024-12-1");
