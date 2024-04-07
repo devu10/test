@@ -78,15 +78,35 @@ function chal3() {
 }
 
 function dateTest() {
-  const smDate = new Date("1912-10-30");
+  // const smDate = new Date("1912-10-30");
   // const data = smDate.toLocaleTimeString();
   // const data = smDate.toLocaleDateString();
   // const data = smDate.toISOString();
-
-  smDate.setDate(smDate.getDate() + 10);
-
-  console.log(smDate);
-  console.log(smDate.getTime());
+  // smDate.setDate(smDate.getDate() + 10);
+  // console.log(smDate);
+  // console.log(smDate.getTime());
+  // const a = new Date("2024-01-05");
+  // const b = new Date();
+  // if (a < b) {
+  //   console.log("expired " + (b - a) + " days ago");
+  // } else {
+  //   console.log("not expired you have 10 days to use it");
+  // }
 }
 
 dateTest();
+
+function dateCh(food, expiry) {
+  const currentDate = new Date();
+  const expirydate = new Date(expiry);
+
+  const DateDiff = Math.floor(
+    (currentDate - expirydate) / (1000 * 60 * 60 * 24)
+  );
+
+  return DateDiff > 0
+    ? console.log(food + " expired " + Math.abs(DateDiff) + " days ago.")
+    : console.log(`You have ${Math.abs(DateDiff)} days to use ${food}`);
+}
+
+dateCh("apple", "2024-12-1");
