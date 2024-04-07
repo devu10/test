@@ -129,8 +129,8 @@ const memberList = [
   },
 ];
 
-const showMember = (members) => {
-  const memberDes = `${members.name} is the member from ${members.location} with the roles in the position as ${members.post}`;
+const showMember = ({ name, location, post }) => {
+  const memberDes = `${name} is the member from ${location} with the roles in the position as ${post}`;
   return memberDes;
 };
 
