@@ -96,7 +96,7 @@ function dateTest() {
 
 dateTest();
 
-function dateCh(food, expiry) {
+const dateCh = (food, expiry) => {
   const currentDate = new Date();
   const expirydate = new Date(expiry);
 
@@ -107,6 +107,6 @@ function dateCh(food, expiry) {
   return DateDiff > 0
     ? console.log(food + " expired " + Math.abs(DateDiff) + " days ago.")
     : console.log(`You have ${Math.abs(DateDiff)} days to use ${food}`);
-}
+};
 
 dateCh("apple", "2024-12-1");
