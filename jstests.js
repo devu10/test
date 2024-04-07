@@ -109,4 +109,32 @@ const dateCh = (food, expiry) => {
     : console.log(`You have ${Math.abs(DateDiff)} days to use ${food}`);
 };
 
-dateCh("apple", "2024-12-1");
+// dateCh("apple", "2024-12-1");
+
+const memberList = [
+  {
+    name: "amit",
+    location: "nepal",
+    post: "treasurer",
+  },
+  {
+    name: "devendra",
+    location: "australia",
+    post: "secretery",
+  },
+  {
+    name: "rajendra",
+    location: "nepal",
+    post: "head",
+  },
+];
+
+const showMember = (members) => {
+  const memberDes = `${members.name} is the member from ${members.location} with the roles in the position as ${members.post}`;
+  return memberDes;
+};
+
+memberList.forEach((item) => {
+  const memberInfo = showMember(item);
+  console.log(memberInfo);
+});
