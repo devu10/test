@@ -116,11 +116,13 @@ const memberList = [
     name: "amit",
     location: "nepal",
     post: "treasurer",
+    type: "permanent",
   },
   {
     name: "devendra",
     location: "australia",
     post: "secretery",
+    donation: "2024",
   },
   {
     name: "rajendra",
@@ -129,8 +131,15 @@ const memberList = [
   },
 ];
 
-const showMember = (members) => {
-  const memberDes = `${members.name} is the member from ${members.location} with the roles in the position as ${members.post}`;
+const donationInfo = (donation) => {
+  return `He has made his last donation on ${donation}`;
+};
+
+const showMember = ({ name, location, post, ...rest }) => {
+  let memberDes = `${name} is the member from ${location} with the roles in the position as ${post}`;
+  if (rest.donation) {
+    memberDes += donationInfo(rest.donation);
+  }
   return memberDes;
 };
 
