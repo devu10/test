@@ -109,6 +109,33 @@ const dateCh = (food, expiry) => {
     : console.log(`You have ${Math.abs(DateDiff)} days to use ${food}`);
 };
 
+const errHand = () => {
+  try {
+    if (jpt === undefined) {
+      throw new Error("test");
+    }
+    console.log(jpt);
+  } catch (er) {
+    if (er.message === "test") {
+      console.log("test success");
+    }
+    console.log(er);
+  } finally {
+    console.log("this is the logging part of the finaly block");
+  }
+};
+
+function intervalTest() {
+  let count = 10;
+  const inter = setInterval(() => {
+    console.log("count begins: ", count--);
+    if (count === 0) {
+      clearInterval(inter);
+      console.log("pop up add comes");
+    }
+  }, 1000);
+}
+
 // dateCh("apple", "2024-12-1");
 
 const memberList = [
@@ -131,14 +158,14 @@ const memberList = [
   },
 ];
 
-const donationInfo = (donation) => {
+const donationInfo = ({ donation }) => {
   return `He has made his last donation on ${donation}`;
 };
 
 const showMember = ({ name, location, post, ...rest }) => {
-  let memberDes = `${name} is the member from ${location} with the roles in the position as ${post}`;
+  let memberDes = `${name} is the member from ${location} with the roles in the position as ${post}. `;
   if (rest.donation) {
-    memberDes += donationInfo(rest.donation);
+    memberDes += donationInfo(rest);
   }
   return memberDes;
 };
@@ -147,3 +174,5 @@ memberList.forEach((item) => {
   const memberInfo = showMember(item);
   console.log(memberInfo);
 });
+
+intervalTest();
