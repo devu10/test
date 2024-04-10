@@ -215,7 +215,16 @@ function objTest() {
       return "extra info";
     },
   };
+
+  const copyEvents = events;
+  events.eventDate = "2082/01/01";
+  events.eventTime.morningPuja = "bihana";
   console.log(events);
+  console.log(copyEvents);
+
+  const copyEvents4 = JSON.parse(JSON.stringify(events));
+  events.eventTime.morningPuja = "5am";
+  console.log(copyEvents4);
 }
 
 objTest();
