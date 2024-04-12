@@ -227,4 +227,33 @@ function objTest() {
   console.log(copyEvents4);
 }
 
-objTest();
+const getEventManager = () => {};
+
+const events = {
+  nayabarsa: {
+    eventName: "nayabarsa",
+    eventDate: "2081/01/01",
+    eventTimes: {
+      morning: "6 AM",
+      day: "1 PM",
+      evening: "6 PM",
+      night: "9 PM",
+    },
+    eventManager: (member = "Amit", post = "Head") => {
+      return `name: ${member}, post: ${post}`;
+    },
+  },
+  janaipurnima: {
+    eventName: "janaipurnima",
+    eventDate: "2081/05/15",
+    eventTimes: {
+      morning: "6 AM",
+      day: "1 PM",
+      evening: "6 PM",
+      night: "9 PM",
+    },
+    eventManager: (member = "Amit", post = "Head") => {
+      return `name: ${member}, post: ${post}`;
+    },
+  },
+};
