@@ -227,7 +227,9 @@ function objTest() {
   console.log(copyEvents4);
 }
 
-const getEventManager = () => {};
+const getEventManager = ({ name, post }) => {
+  return `name: ${name}, post: ${post}`;
+};
 
 const events = {
   nayabarsa: {
@@ -239,9 +241,7 @@ const events = {
       evening: "6 PM",
       night: "9 PM",
     },
-    eventManager: (member = "Amit", post = "Head") => {
-      return `name: ${member}, post: ${post}`;
-    },
+    eventManager: getEventManager(),
   },
   janaipurnima: {
     eventName: "janaipurnima",
@@ -252,8 +252,6 @@ const events = {
       evening: "6 PM",
       night: "9 PM",
     },
-    eventManager: (member = "Amit", post = "Head") => {
-      return `name: ${member}, post: ${post}`;
-    },
+    eventManager: getEventManager(),
   },
 };
