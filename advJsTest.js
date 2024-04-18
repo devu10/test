@@ -35,12 +35,22 @@ const makeCounter = function () {
 const counter1 = makeCounter();
 const counter2 = makeCounter();
 
-console.log(counter1.value()); // 0.
+// console.log(counter1.value());
 
-counter1.increment();
-counter1.increment();
-console.log(counter1.value()); // 2.
+// counter1.increment();
+// counter1.increment();
+// console.log(counter1.value());
 
-counter1.decrement();
-console.log(counter1.value()); // 1.
-console.log(counter2.value()); // 0.
+// counter1.decrement();
+// console.log(counter1.value());
+// console.log(counter2.value());
+
+const person = {
+  name: "person",
+  add: "nepal",
+  bio() {
+    return `this is a test for ${this.name} if ${this.add}`;
+  },
+};
+
+console.log(person.bio());
