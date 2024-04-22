@@ -72,6 +72,8 @@ console.log(eventObj1, eventObj1.returningFun());
 
 // constructer function
 
+/*
+
 function EventObj(name, post) {
   this.name = name;
   this.post = post;
@@ -84,3 +86,29 @@ EventObj.prototype.bio = function () {
 const eventObj1 = new EventObj("Anit", "head");
 
 console.log(eventObj1.bio());
+*/
+
+// class based OOP
+
+class EventObj {
+  constructor(name, add) {
+    this.name = name;
+    this.add = add;
+  }
+
+  bio() {
+    return `this is ${this.name} from the streets of ${this.add}`;
+  }
+
+  toupper() {
+    this.name = this.name.toUpperCase();
+  }
+}
+
+const wobj = new EventObj("amit", "salyansthan");
+
+console.log(wobj.bio());
+
+wobj.toupper();
+
+console.log(wobj.bio());
