@@ -45,12 +45,25 @@ const counter2 = makeCounter();
 // console.log(counter1.value());
 // console.log(counter2.value());
 
-const person = {
-  name: "person",
-  add: "nepal",
-  bio() {
-    return `this is a test for ${this.name} if ${this.add}`;
-  },
-};
+// const person = {
+//   name: "person",
+//   add: "nepal",
+//   bio() {
+//     return `this is a test for ${this.name} if ${this.add}`;
+//   },
+// };
 
-console.log(person.bio());
+// console.log(person.bio());
+
+function eventObj(name, post) {
+  return {
+    name,
+    post,
+    returningFun() {
+      return `hey this is ${this.name} witht the posr of ${this.post}`;
+    },
+  };
+}
+const eventObj1 = eventObj("Amit", "head");
+
+console.log(eventObj1, eventObj1.returningFun());
