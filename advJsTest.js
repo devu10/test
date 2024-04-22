@@ -55,6 +55,7 @@ const counter2 = makeCounter();
 
 // console.log(person.bio());
 
+/*
 function eventObj(name, post) {
   return {
     name,
@@ -67,3 +68,19 @@ function eventObj(name, post) {
 const eventObj1 = eventObj("Amit", "head");
 
 console.log(eventObj1, eventObj1.returningFun());
+*/
+
+// constructer function
+
+function EventObj(name, post) {
+  this.name = name;
+  this.post = post;
+}
+
+EventObj.prototype.bio = function () {
+  return `hey this is ${this.name} with the position of ${this.post}`;
+};
+
+const eventObj1 = new EventObj("Anit", "head");
+
+console.log(eventObj1.bio());
