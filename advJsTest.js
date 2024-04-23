@@ -131,7 +131,7 @@ const eventData = {
   date: "1-1-2023",
   location: "kathmandu",
 };
-
+/*
 function dispalyEve(e) {
   return `this is the ${e.name} event, which happens at ${
     e.location
@@ -149,3 +149,30 @@ function newEvent(e) {
 }
 
 console.log(dispalyEve(eventData));
+*/
+class EventObj {
+  constructor(obj) {
+    this.name = obj.name;
+    this.location = obj.location;
+    this.date = obj.date;
+  }
+  dispalyEve() {
+    return `this is the ${this.name} event, which happens at ${
+      this.location
+    } happened ${this.getEventdate(this.date)} years ago`;
+  }
+
+  getEventdate() {
+    return new Date().getFullYear() - new Date(this.date).getFullYear();
+  }
+
+  newEvent() {
+    return `the ${this.name} event of year ${
+      new Date().getFullYear() + 1
+    } will happen on date`;
+  }
+}
+
+const eObj = new EventObj(eventData);
+
+console.log(eObj.dispalyEve());
