@@ -90,25 +90,62 @@ console.log(eventObj1.bio());
 
 // class based OOP
 
-class EventObj {
-  constructor(name, add) {
-    this.name = name;
-    this.add = add;
-  }
+// class EventObj {
+//   constructor(name, add) {
+//     this.name = name;
+//     this.add = add;
+//   }
 
-  bio() {
-    return `this is ${this.name} from the streets of ${this.add}`;
-  }
+//   bio() {
+//     return `this is ${this.name} from the streets of ${this.add}`;
+//   }
 
-  toupper() {
-    this.name = this.name.toUpperCase();
-  }
+//   toupper() {
+//     this.name = this.name.toUpperCase();
+//   }
+// }
+
+// const wobj = new EventObj("amit", "salyansthan");
+
+// console.log(wobj.bio());
+
+// wobj.toupper();
+
+// console.log(wobj.bio());
+
+/*
+const obj = {
+  name: "amit",
+  bio: () => {
+    console.log(this);
+    console.log(this.name);
+  },
+};
+
+obj.bio();
+*/
+
+// javascript oop
+const eventData = {
+  name: "new year",
+  date: "1-1-2023",
+  location: "kathmandu",
+};
+
+function dispalyEve(e) {
+  return `this is the ${e.name} event, which happens at ${
+    e.location
+  } happened ${getEventdate(e.date)} years ago`;
 }
 
-const wobj = new EventObj("amit", "salyansthan");
+function getEventdate(d) {
+  return new Date().getFullYear() - new Date(d).getFullYear();
+}
 
-console.log(wobj.bio());
+function newEvent(e) {
+  return `the ${e.name} event of year ${
+    new Date().getFullYear() + 1
+  } will happen on date`;
+}
 
-wobj.toupper();
-
-console.log(wobj.bio());
+console.log(dispalyEve(eventData));
