@@ -150,29 +150,89 @@ function newEvent(e) {
 
 console.log(dispalyEve(eventData));
 */
-class EventObj {
+// class EventObj {
+//   constructor(obj) {
+//     this.name = obj.name;
+//     this.location = obj.location;
+//     this.date = obj.date;
+//   }
+//   dispalyEve() {
+//     return `this is the ${this.name} event, which happens at ${
+//       this.location
+//     } happened ${this.getEventdate(this.date)} years ago`;
+//   }
+
+//   getEventdate() {
+//     return new Date().getFullYear() - new Date(this.date).getFullYear();
+//   }
+
+//   newEvent() {
+//     return `the ${this.name} event of year ${
+//       new Date().getFullYear() + 1
+//     } will happen on date`;
+//   }
+// }
+
+// const eObj = new EventObj(eventData);
+
+// console.log(eObj.dispalyEve());
+
+// inheritence
+
+class Person {
   constructor(obj) {
     this.name = obj.name;
-    this.location = obj.location;
-    this.date = obj.date;
-  }
-  dispalyEve() {
-    return `this is the ${this.name} event, which happens at ${
-      this.location
-    } happened ${this.getEventdate(this.date)} years ago`;
+    this.address = obj.address;
+    this.phone = obj.phone;
   }
 
-  getEventdate() {
-    return new Date().getFullYear() - new Date(this.date).getFullYear();
-  }
-
-  newEvent() {
-    return `the ${this.name} event of year ${
-      new Date().getFullYear() + 1
-    } will happen on date`;
+  bio() {
+    return `${this.name} is from ${this.address} with contact number as ${this.phone}.`;
   }
 }
 
-const eObj = new EventObj(eventData);
+class Supplier extends Person {
+  constructor(obj) {
+    super(obj);
+    this.item = obj.item;
+  }
 
-console.log(eObj.dispalyEve());
+  provides() {
+    return `service provided by this supplier mainly delivering product ${this.item}`;
+  }
+}
+
+class Client extends Person {
+  constructor(obj) {
+    super(obj);
+    this.product = obj.product;
+  }
+
+  consumes() {
+    return `product mainly consumed by this client is ${this.product}`;
+  }
+}
+
+const sup1 = {
+  name: "Tom and Jerry pvt",
+  address: "lillyfiedl",
+  phone: 877655646,
+  item: "socks",
+};
+
+const clint1 = {
+  name: "monty",
+  address: "st james",
+  phone: 4564654654,
+  product: "tucsido",
+};
+
+const supObj = new Supplier(sup1);
+
+console.log(supObj.bio() + " " + supObj.provides());
+
+const cliObj = new Client(clint1);
+
+console.log(cliObj.bio() + " " + cliObj.consumes());
+
+const tes = new Person();
