@@ -180,14 +180,34 @@ console.log(dispalyEve(eventData));
 // inheritence
 
 class Person {
+  #name;
+  #address;
+  #phone;
   constructor(obj) {
-    this.name = obj.name;
-    this.address = obj.address;
-    this.phone = obj.phone;
+    this.#name = obj.name;
+    this.#address = obj.address;
+    this.#phone = obj.phone;
+    if (new.target === Person) {
+      throw new Error("cannot instantiate abstract class diectly");
+    }
+  }
+
+  getName() {
+    return this.#name;
+  }
+
+  getAddress() {
+    return this.#address;
+  }
+
+  getPhone() {
+    return this.#phone;
   }
 
   bio() {
-    return `${this.name} is from ${this.address} with contact number as ${this.phone}.`;
+    return `${this.#name} is from ${this.#address} with contact number as ${
+      this.#phone
+    }.`;
   }
 }
 
@@ -210,6 +230,10 @@ class Client extends Person {
 
   consumes() {
     return `product mainly consumed by this client is ${this.product}`;
+  }
+
+  bio() {
+    return `${this.getName()} is the name of client and they are from ${this.getAddress()}, their contact number is ${this.getPhone()}`;
   }
 }
 
@@ -234,5 +258,3 @@ console.log(supObj.bio() + " " + supObj.provides());
 const cliObj = new Client(clint1);
 
 console.log(cliObj.bio() + " " + cliObj.consumes());
-
-const tes = new Person();
