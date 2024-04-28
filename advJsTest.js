@@ -179,6 +179,7 @@ console.log(dispalyEve(eventData));
 
 // inheritence
 
+/*
 class Person {
   #name;
   #address;
@@ -258,3 +259,38 @@ console.log(supObj.bio() + " " + supObj.provides());
 const cliObj = new Client(clint1);
 
 console.log(cliObj.bio() + " " + cliObj.consumes());
+*/
+
+// Challange OOP
+class Car {
+  #engineOn;
+  #model;
+
+  constructor(model) {
+    this.#model = model;
+    this.#engineOn = false;
+  }
+
+  drive() {
+    this.#engineOn
+      ? console.log(`${this.#model} is now moving.`)
+      : console.log("Pleaese Start the engine first.");
+  }
+  startEngine() {
+    if (!this.#engineOn) {
+      this.#engineOn = true;
+      console.log(`${this.#model} engine started. Ready to drive.`);
+    } else {
+      console.log(`${this.#model} engine is already running.`);
+    }
+  }
+
+  stopEngine() {
+    if (this.#engineOn) {
+      this.#engineOn = false;
+      console.log(`${this.#model} engine is stopped.`);
+    } else {
+      console.log(`${this.#model} engine is not running.`);
+    }
+  }
+}
