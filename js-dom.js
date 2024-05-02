@@ -46,3 +46,11 @@ elm.removeChild(document.querySelector("[href='google.com']"));
 const newElmRep = document.createElement("p");
 newElmRep.innerText = "new element for the replcae eleme";
 elm.replaceChild(newElmRep, document.querySelector(".display"));
+
+//update css form the js
+//note. selecting the element with class name that is used multiple times or the elemetn that is used in multiple place the first occurance elemet is selected
+const infoElm = document.querySelector(".info");
+infoElm.style.fontSize = "2rem";
+
+const mulElm = document.querySelector("div");
+mulElm.style.color = "red";
