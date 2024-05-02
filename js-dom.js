@@ -23,6 +23,8 @@ elm.innerText = "change formt he server";
 
 elm.innerHTML = "<h1>change forfmt he serve with html</h1>";
 */
+
+/*
 //manipulating HTML elements from js
 //elm is the parent element
 const elm = document.querySelector("body");
@@ -54,3 +56,17 @@ infoElm.style.fontSize = "2rem";
 
 const mulElm = document.querySelector("div");
 mulElm.style.color = "red";
+
+//setting attributes
+document
+  .querySelector("h2")
+  .setAttribute("style", "font-size:2rem;color:green;");
+*/
+
+// changing the html calss names
+
+const elm = document.querySelector(".message");
+// elm.className = "newClass"; //this will replcae the existing classes of the element with new class name newClass
+elm.classList.add("success");
+elm.classList.remove("test"); //removes the class test from the element
+console.log(elm.classList);
