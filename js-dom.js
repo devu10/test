@@ -64,9 +64,29 @@ document
 */
 
 // changing the html calss names
-
+/*
 const elm = document.querySelector(".message");
 // elm.className = "newClass"; //this will replcae the existing classes of the element with new class name newClass
 elm.classList.add("success");
 elm.classList.remove("test"); //removes the class test from the element
 console.log(elm.classList);
+*/
+// evetnts
+
+const changeUI = (e) => {
+  console.log("evenet is triggeres");
+  alert("onclic devernt teste");
+
+  console.log(e);
+};
+let count = 0;
+const elm = document.querySelector(".display2");
+
+const fc = () => {
+  elm.classList.toggle("success");
+  console.log(count++);
+
+  if (count === 5) elm.removeEventListener("click", fc);
+};
+
+elm.addEventListener("click", fc);
