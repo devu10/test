@@ -11,6 +11,8 @@ submitForm.addEventListener("click", () => {
 
   inputArr = input.split("\n");
 
+  inputArr = inputArr.map((item) => item.replace(/-/g, ""));
+
   displayCsvString.innerText = inputArr;
 });
 
