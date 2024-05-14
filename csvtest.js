@@ -13,10 +13,10 @@ submitForm.addEventListener("click", () => {
 
   inputArr = inputArr.map((item) => item.replace(/-/g, ""));
 
-  displayCsvString.innerText = inputArr;
+  displayCsvString.value = inputArr.join("\n");
 });
 
 clearBtn.addEventListener("click", () => {
   csvString.value = "";
-  displayCsvString.innerText = "";
+  displayCsvString.value = "";
 });
